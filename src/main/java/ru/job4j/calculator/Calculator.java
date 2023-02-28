@@ -15,7 +15,7 @@ public class Calculator {
         int fiveMinusTwo = five - two;
         int fourTimeTwo = four * two;
 
-        System.out.printf("6/2 = %d \n5-2 = %d \n4*2 = %d", sixDivTwo, fiveMinusTwo, fourTimeTwo);
+        System.out.printf("6/2 = %d" + System.lineSeparator() + "5-2 = %d" + System.lineSeparator() + "4*2 = %d", sixDivTwo, fiveMinusTwo, fourTimeTwo);
 
     }
 }
