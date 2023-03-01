@@ -16,5 +16,6 @@ public class Calculator {
         plus(10, 11);
         minus(7, 3);
         minus(2, 6);
+
     }
 }
