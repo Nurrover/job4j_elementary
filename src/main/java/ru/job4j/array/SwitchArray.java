@@ -19,7 +19,7 @@ public class SwitchArray {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5, 6};
         int[] rsl = swapBorder(nums);
-        for (int num: rsl) {
+        for (int num : rsl) {
             System.out.println(num);
         }
     }
