@@ -14,7 +14,7 @@ public class SquareTest {
     }
 
     @Test
-    public void whenBound5Then0To25() {
+    public void whenBound5Then0To16() {
         int bound = 5;
         int[] expected = {0, 1, 4, 9, 16};
         int[] result = Square.calculate(bound);
