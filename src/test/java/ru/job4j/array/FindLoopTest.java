@@ -15,10 +15,10 @@ public class FindLoopTest {
     }
 
     @Test
-    public void whenArrayHas12Then4() {
-        int[] data = {1, 23, 54, 10, 12, 2000, -3};
+    public void whenArrayHas12ThenMinus1() {
+        int[] data = {1, 23, 54, 10, -13, 2000, -3};
         int el = 12;
-        int expected = 4;
+        int expected = -1;
         int rsl = FindLoop.indexOf(data, el);
         assertThat(rsl).isEqualTo(expected);
     }
