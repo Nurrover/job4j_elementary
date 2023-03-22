@@ -87,4 +87,43 @@ public class MatrixCheckTest {
         char[] result = MatrixCheck.extractDiagonal(board);
         assertThat(result).containsExactly(expected);
     }
+
+    @Test
+    public void whenDataMonoByTrueThenTrue() {
+        char[][] board = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.isWin(board);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void whenDataMonoByTrueThenFalse() {
+        char[][] board = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.isWin(board);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    public void whenDataMonoIsByTrueThenFalse() {
+        char[][] board = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', ' ', 'X', ' '},
+                {' ', ' ', ' ', ' ', 'X'},
+        };
+        boolean result = MatrixCheck.isWin(board);
+        assertThat(result).isFalse();
+    }
 }
