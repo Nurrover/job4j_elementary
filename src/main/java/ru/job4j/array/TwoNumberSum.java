@@ -9,7 +9,7 @@ public class TwoNumberSum {
             if (array[i] + array[j] == target) {
                 rsl = new int[] {i, j};
                 break;
-            } else if (array[i] + array[j] > target) {
+            } else if (array[i] > target && array[j] > target) {
                 break;
             }
             if (j == array.length - 1) {
@@ -29,7 +29,7 @@ public class TwoNumberSum {
                 if (array[i] + array[j] == target) {
                     rsl = new int[] {i, j};
                     break;
-                } else if (array[i] + array[j] > target) {
+                } else if (array[i] > target && array[j] > target) {
                     flag = true;
                     break;
                 }
