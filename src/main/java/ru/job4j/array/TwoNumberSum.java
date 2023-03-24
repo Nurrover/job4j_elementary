@@ -3,40 +3,34 @@ package ru.job4j.array;
 public class TwoNumberSum {
     public static int[] getIndexes(int[] array, int target) {
         int i = 0;
-        int j = 1;
+        int j = array.length - 1;
         int[] rsl = new int[0];
-        while (i < array.length) {
+        while (i < j) {
             if (array[i] + array[j] == target) {
-                rsl = new int[] {i, j};
+                rsl = new int[]{i, j};
                 break;
-            } else if (array[i] > target && array[j] > target) {
-                break;
-            }
-            if (j == array.length - 1) {
+            } else if (array[i] + array[j] < target) {
                 i++;
-                j = 0;
+            } else {
+                j--;
             }
-            j++;
         }
         return rsl;
     }
 
     public static int[] getIndexesVersionTwo(int[] array, int target) {
         int[] rsl = new int[0];
-        boolean flag = false;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j < array.length; j++) {
-                if (array[i] + array[j] == target) {
-                    rsl = new int[] {i, j};
-                    break;
-                } else if (array[i] > target && array[j] > target) {
-                    flag = true;
-                    break;
-                }
-            }
-            if (flag) {
+        int i = 0;
+        int j = 1;
+        while (i < array.length && j < array.length) {
+            if (array[i] + array[j] == target) {
+                rsl = new int[]{i, j};
                 break;
+            } else if (j == array.length - 1 || array[i] + array[j] > target) {
+                i++;
+                j = i + 1;
             }
+            j++;
         }
         return rsl;
     }
